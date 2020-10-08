@@ -2,7 +2,11 @@
 
 ## Motivation
 
-As a Team Lead at Lambda School, we meet all kinds of unique and amazing people. The creator of the New Calendar is Tom Sherman (Class of 35, Web). He added the 5th season of the year and modified the calendar so that it works with modern understanding that was not available.
+As a Team Lead at Lambda School, we meet all kinds of unique and amazing people. The creator of the New Calendar is Tom Sherman (Class of 35, Web), who claims he discovered the 5th season of the year and invented an annual calendar system that can keep track of time better than the Gregorian Calendar, by using modern math, science, and logic.
+
+[more background on the new calendar]
+
+more information on the theory, discovery, and uses of the New Calendar can also be found on [The New Calendar](https://thenewcalendar.com)
 
 ## Tech / Framework
 
@@ -72,7 +76,7 @@ Want to contribute? See the [CONTRIBUTE](https://github.com/mrzacsmith/new-calen
 
 ## Credits
 
-_The New Calendar_ Copyright and all rights reserved 2019-2020 [Tom Sherman]()
+_The New Calendar_ Copyright and all rights reserved 2019-9999 [Tom Sherman]()
 
 ## License
 
