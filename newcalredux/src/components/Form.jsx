@@ -9,6 +9,14 @@ const Form = (props) => {
     setSearchTerm(event.target.value);
   };
 
+  const submitHandle = (event) => {
+    console.log(props);
+    event.preventDefault();
+    props.setUrl(
+      `https://new-calendar-be.herokuapp.com/api/v1/days/?seasonIn=${searchTerm}`
+    );
+  };
+
   const renderLoader = () => {
     return (
       <>
@@ -25,14 +33,14 @@ const Form = (props) => {
 
   return (
     <div>
-      <h2>this is the form</h2>
-      <form>
+      <h2>Search for Winter, Spring, Summer, Autumn, or Fall!</h2>
+      <form onSubmit={submitHandle}>
         <input
           name="search"
           type="text"
           onChange={handleChanges}
           value={searchTerm}
-          placeholder="placeholder"
+          placeholder="enter 1 of 5 seasons"
         />
         <button>{props.isLoading ? renderLoader() : "search"}</button>
       </form>

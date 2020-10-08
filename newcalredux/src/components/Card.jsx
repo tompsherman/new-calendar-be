@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Card = (props) => {
-  console.log("props in Card:", props);
   return (
     <StyledDiv>
       <div className="dayCard">

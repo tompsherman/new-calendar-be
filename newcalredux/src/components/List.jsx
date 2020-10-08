@@ -8,9 +8,11 @@ import { fetchDays } from "../actions";
 import styled from "styled-components";
 
 const List = (props) => {
+  const { fetchDays, url } = props;
+
   useEffect(() => {
-    props.fetchDays();
-  }, []);
+    fetchDays(url);
+  }, [fetchDays, url]);
 
   return (
     <StyledDiv>
