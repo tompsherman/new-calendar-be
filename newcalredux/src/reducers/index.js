@@ -22,7 +22,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        error: "",
+        days: action.payload,
       };
     default:
       return state;

@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 
+import Card from "./Card";
+
 import { connect } from "react-redux";
 import { fetchDays } from "../actions";
 
-import Card from "./Card";
+import styled from "styled-components";
 
 const List = (props) => {
   useEffect(() => {
@@ -11,14 +13,23 @@ const List = (props) => {
   }, []);
 
   return (
-    <div>
-      <h2>this is the List</h2>
-      {props.days.map((item) => (
-        <Card key={item.id} day={item} />
-      ))}
-    </div>
+    <StyledDiv>
+      <div className="fullPage">
+        {props.days.map((day) => (
+          <Card key={day._id} day={day} />
+        ))}
+      </div>
+    </StyledDiv>
   );
 };
+
+const StyledDiv = styled.div`
+  .fullPage {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+`;
 
 const mapStateToProps = (state) => {
   return {

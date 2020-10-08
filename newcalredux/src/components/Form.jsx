@@ -28,6 +28,8 @@ const Form = (props) => {
       <h2>this is the form</h2>
       <form>
         <input
+          name="search"
+          type="text"
           onChange={handleChanges}
           value={searchTerm}
           placeholder="placeholder"
