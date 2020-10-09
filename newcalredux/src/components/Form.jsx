@@ -9,25 +9,16 @@ const CalForm = (props) => {
 
   const handleSeasonChanges = (event) => {
     setseason(event.target.value);
+    props.setUrl(
+      `https://new-calendar-be.herokuapp.com/api/v1/days/?seasonIn=${season}`
+    );
   };
 
   const handleMonthChanges = (event) => {
     setMonth(event.target.value);
-  };
-
-  const submitMonthHandle = (event) => {
-    event.preventDefault()
     props.setUrl(
       `https://new-calendar-be.herokuapp.com/api/v1/days/?seasonIn=${season}&monthIn=${month}`
     )
-  }
-
-  const submitSeasonHandle = (event) => {
-    console.log(props);
-    event.preventDefault();
-    props.setUrl(
-      `https://new-calendar-be.herokuapp.com/api/v1/days/?seasonIn=${season}`
-    );
   };
 
   const renderLoader = () => {
@@ -54,37 +45,36 @@ const CalForm = (props) => {
           value={season}
           placeholder="enter 1 of 5 seasons"
         /> */}
-      <form onSubmit={submitMonthHandle}>
+      <form>
       <Label check>
-          <Input type="radio" name="month" value="early" onChange={handleMonthChanges} /> Early
+          <Input type="radio" name="month" value="early" onClick={handleMonthChanges} /> Early
         </Label>
         <Label check>
-          <Input type="radio" name="month" value="mid" onChange={handleMonthChanges} /> Mid-
+          <Input type="radio" name="month" value="mid" onAuxClick={handleMonthChanges} /> Mid-
         </Label>
         <Label check>
-          <Input type="radio" name="month" value="late" onChange={handleMonthChanges}/> Late
+          <Input type="radio" name="month" value="late" onClick={handleMonthChanges}/> Late
         </Label>
-        <button>{props.isLoading ? renderLoader() : "get month"}</button>
+        {/* <button>{props.isLoading ? renderLoader() : "get month"}</button> */}
       </form>
 
-      <form onSubmit={submitSeasonHandle}>
+      <form >
         <Label check>
-          <Input type="radio" name="season" value="winter" onChange={handleSeasonChanges} /> Winter
+          <Input type="radio" name="season" value="winter" onClick={handleSeasonChanges} /> Winter
         </Label>
         <Label check>
-          <Input type="radio" name="season" value="spring" onChange={handleSeasonChanges} /> Spring
+          <Input type="radio" name="season" value="spring" onClick={handleSeasonChanges} /> Spring
         </Label>
         <Label check>
-          <Input type="radio" name="season" value="summer" onChange={handleSeasonChanges}/> Summer
+          <Input type="radio" name="season" value="summer" onClick={handleSeasonChanges}/> Summer
         </Label>
         <Label check>
-          <Input type="radio" name="season" value="autumn" onChange={handleSeasonChanges}/> Autumn
+          <Input type="radio" name="season" value="autumn" onClick={handleSeasonChanges}/> Autumn
         </Label>
         <Label check>
-          <Input type="radio" name="season" value="fall" onChange={handleSeasonChanges}/> Fall
+          <Input type="radio" name="season" value="fall" onClick={handleSeasonChanges}/> Fall
         </Label>
 
-        <button>{props.isLoading ? renderLoader() : "get season"}</button>
       </form>
     </div>
   );
